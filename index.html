@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Phiếu khảo sát từ Khách Sạn của chúng tôi.</title>
+    </head>
+    <body>
+    <section>
+        <h1>Phiếu khảo sát từ Khách Sạn.</h1>
+        <p>Cảm ơn các bạn vì đã sử dụng dịch vụ trong khách sạn của chúng tôi. Chúng tôi luôn chào đón các bạn trở lại!</p>
+    <form action="Thông tin.html">
+        <fieldset>
+            <legend>Các mục</legend>
+            <nav aria-hidden="true">
+            <!--Các links dẫn đến các mục đánh giá ở đây-->
+            </nav>
+        </fieldset>
+    </form>
+    </section>
+        <h2>1. Thông tin cá nhân</h2>
+        <form action="Thông tin.html">
+        <fieldset>
+            <legend>Thông tin cá nhân</legend>
+            <div>
+                <label id="tên" for="tên">Tên của bạn:</label>
+                <input type="text" required placeholder="Lê Thái Dũng" id="tên" name="tên">
+            </div>
+            <div>
+                <label id="tuổi" for="tuổi">Tuổi của bạn:</label>
+                <input type="number" min="10" max="100" id="tuổi" name="tuổi" required placeholder="25">
+            </div>
+            <div>
+                <label id="giới-tính" for="giới-tính">Giới tính của bạn:</label>
+                <select id="giới-tính">
+                    <option id="giới-tính">Nam</option>
+                    <option id="giới-tính">Nữ</option>
+                    <option id="giới-tính">Khác</option>
+                </select>
+            </div>
+        </fieldset>
+        <h2>2. Các mục chính</h2>
+        <fieldset>
+            <legend>Các mục cần đánh giá</legend>
+            <div>
+                <label id="đồ-ăn" for="đồ-ăn">Chất lượng đồ ăn như nào?</label>
+                <select id="đồ-ăn">
+                    <option id="đồ-ăn">Không thể chê được!</option>
+                    <option id="đồ-ăn" selected>Ngon</option>
+                    <option id="đồ-ăn">Tuyệt</option>
+                    <option id="đồ-ăn">Bình thường</option>
+                    <option id="đồ-ăn">Hơi tệ</option>
+                    <option id="đồ-ăn">Tệ</option>
+                </select>
+            </div>
+            <div>
+                <label id="dịch-vụ" for="dịch-vụ">Dịch vụ của chúng tôi như nào?</label>
+                <select id="dịch-vụ">
+                    <option id="dịch-vụ">Tuyệt vời</option>
+                    <option id="dịch-vụ">Không tệ</option>
+                    <option id="dịch-vụ">Ổn</option>
+                    <option id="dịch-vụ" selected>Chưa tốt</option>
+                    <option id="dịch-vụ">Tệ</option>
+                </select>
+            </div>
+        </fieldset>
+        </form>
+    </body>
+</html>
