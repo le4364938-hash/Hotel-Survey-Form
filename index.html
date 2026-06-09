@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Phiếu khảo sát từ Khách Sạn của chúng tôi.</title>
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
     <section>
@@ -21,60 +22,21 @@
         <form action="Thông tin.html">
         <fieldset>
             <legend>Thông tin cá nhân</legend>
-            <section>
-                <label id="tên" for="tên">Tên của bạn:</label>
-                <input type="text" required placeholder="Lê Thái Dũng" id="tên" name="tên">
-            </section>
-            <section>
-                <label id="tuổi" for="tuổi">Tuổi của bạn:</label>
-                <input type="number" min="10" max="100" id="tuổi" name="tuổi" required placeholder="25">
-            </section>
-            <section>
-                <label id="giới-tính" for="giới-tính">Giới tính của bạn:</label>
-                <select id="giới-tính">
-                    <option id="giới-tính">Nam</option>
-                    <option id="giới-tính">Nữ</option>
-                    <option id="giới-tính">Khác</option>
-                </select>
-            </section>
+            <div id="personal-info-fields"></div>
         </fieldset>
         <h2>2. Các mục chính</h2>
         <fieldset>
             <legend>Các mục cần đánh giá</legend>
             <section>
                 <label id="đặt-phòng" for="đặt-phòng">Trải nghiệm đặt phòng của bạn như nào?</label>
-                <select id="đồ-ăn">
-                    <option id="đặt-phòng">Rất tốt</option>
-                    <option id="đặt-phòng" selected>Tốt</option>
-                    <option id="đặt-phòng">Bình thường</option>
-                    <option id="đặt-phòng">Kém</option>
-                    <option id="đặt-phòng">Rất kém</option>
-                </select>
+                <span id="rating-booking"></span>
             </section>
-            <fieldset>
-                <legend>Nếu bạn thấy khó khăn trong việc đặt phòng, hãy mô tả nó vào ô trống bên dưới:</legend>
-            <section>
-                <label id="khó-đặt-phòng">Trải nghiệm của bạn:</label>
-                <input type="text" id="khó-đặt-phòng" name="Trải nghiệm đặt phòng">  
-            </section>
-            </fieldset>
+            <div id="experience-booking"></div>
             <section>
                 <label id="thức-ăn" for="thức-ăn">Trải nghiệm ăn uống của bạn như nào?</label>
-                <select id="thức-ăn">
-                    <option id="thức-ăn">Rất Tốt</option>
-                    <option id="thức-ăn" selected>Tốt</option>
-                    <option id="thức-ăn">Bình thường</option>
-                    <option id="thức-ăn">Kém</option>
-                    <option id="thức-ăn">Rất kém</option>
-                </select>
+                <span id="rating-food"></span>
             </section>
-            <fieldset>
-                <legend>Nếu bạn thấy khó khăn trong ăn uống, hãy mô tả nó vào ô trống bên dưới:</legend>
-            <section>
-                <label id="khó-ăn-uống">Trải nghiệm của bạn:</label>
-                <input type="text" id="khó-ăn-uống" name="Trải nghiệm ăn uống">  
-            </section>
-            </fieldset>
+            <div id="experience-food"></div>
         </fieldset>
 <br>
 <hr>
@@ -82,66 +44,60 @@
             <thead>
                 <caption>Tiện nghi khách sạn</caption>
             </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td>Rất tốt</td>
-                    <td>Tốt</td>
-                    <td>Bình thường</td>
-                    <td>Kém</td>
-                    <td>Rất kém</td>
-                </tr>
-                <tr>
-                    <th>Phòng ngủ</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>         
-                </tr>
-                <tr>
-                    <th>Phòng khách</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td> 
-                </tr>
-                <tr>
-                    <th>Hồ bơi</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td> 
-                </tr>
-                <tr> 
-                    <th>Suối nước nóng</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td> 
-                </tr>
-                <tr> 
-                    <th>Phòng gym</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td> 
-                </tr>
-                <tr> 
-                    <th>Thiên nhiên</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td> 
-                </tr>
+            <tbody id="amenity-table-body">
             </tbody>
         </table>
-        <
 <hr>
+        </form>
     </body>
+    <script src="js/utilities.js"></script>
+    <script>
+    (function () {
+        // 1. Personal info fields - generated via shared utility
+        var personalInfoContainer = document.getElementById('personal-info-fields');
+        var personalFields = [
+            { id: 'tên', labelText: 'Tên của bạn:', inputType: 'text', name: 'tên', placeholder: 'Lê Thái Dũng', required: true },
+            { id: 'tuổi', labelText: 'Tuổi của bạn:', inputType: 'number', name: 'tuổi', placeholder: '25', min: 10, max: 100, required: true }
+        ];
+        personalFields.forEach(function (fieldConfig) {
+            personalInfoContainer.appendChild(createFormField(fieldConfig));
+        });
+        personalInfoContainer.appendChild(createGenderSelect('giới-tính', ['Nam', 'Nữ', 'Khác']));
+
+        // 2. Rating selects - generated via shared utility
+        document.getElementById('rating-booking').appendChild(createRatingSelect('đồ-ăn', 'Tốt'));
+        document.getElementById('rating-food').appendChild(createRatingSelect('thức-ăn', 'Tốt'));
+
+        // 3. Experience description fieldsets - generated via shared utility
+        document.getElementById('experience-booking').appendChild(
+            createExperienceFieldset(
+                'Nếu bạn thấy khó khăn trong việc đặt phòng, hãy mô tả nó vào ô trống bên dưới:',
+                'khó-đặt-phòng',
+                'Trải nghiệm đặt phòng'
+            )
+        );
+        document.getElementById('experience-food').appendChild(
+            createExperienceFieldset(
+                'Nếu bạn thấy khó khăn trong ăn uống, hãy mô tả nó vào ô trống bên dưới:',
+                'khó-ăn-uống',
+                'Trải nghiệm ăn uống'
+            )
+        );
+
+        // 4. Amenity rating table - generated via shared utility
+        var amenities = [
+            { label: 'Phòng ngủ', name: 'chất lượng phòng ngủ' },
+            { label: 'Phòng khách', name: 'chất lượng phòng khách' },
+            { label: 'Hồ bơi', name: 'chất lượng hồ bơi' },
+            { label: 'Suối nước nóng', name: 'chất lượng suối nước nóng' },
+            { label: 'Phòng gym', name: 'chất lượng phòng gym' },
+            { label: 'Thiên nhiên', name: 'chất lượng thiên nhiên' }
+        ];
+        var tbody = document.getElementById('amenity-table-body');
+        tbody.appendChild(createAmenityHeaderRow());
+        amenities.forEach(function (amenity) {
+            tbody.appendChild(createAmenityRow(amenity.label, amenity.name));
+        });
+    })();
+    </script>
 </html>
