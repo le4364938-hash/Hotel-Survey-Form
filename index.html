@@ -3,86 +3,118 @@
     <head>
         <meta charset="UTF-8">
         <title>Phiếu khảo sát từ Khách Sạn của chúng tôi.</title>
+        <style>
+            .error-message {
+                color: #d32f2f;
+                font-size: 0.85em;
+                display: none;
+                margin-top: 2px;
+            }
+            .field-error input,
+            .field-error select {
+                border: 2px solid #d32f2f;
+            }
+            .field-error .error-message {
+                display: block;
+            }
+            .form-status {
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 4px;
+                display: none;
+            }
+            .form-status.error {
+                display: block;
+                background: #fdecea;
+                color: #611a15;
+                border: 1px solid #f5c6cb;
+            }
+        </style>
     </head>
     <body>
     <section>
         <h1>Phiếu khảo sát từ Khách Sạn.</h1>
         <p>Cảm ơn các bạn vì đã sử dụng dịch vụ trong khách sạn của chúng tôi. Chúng tôi luôn chào đón các bạn trở lại!</p>
-    <form action="Thông tin.html">
-        <fieldset>
-            <legend>Các mục</legend>
-            <nav aria-hidden="true">
-            <!--Các links dẫn đến các mục đánh giá ở đây-->
-            </nav>
-        </fieldset>
-    </form>
     </section>
+
+    <form id="survey-form" action="Thông tin.html" method="get" novalidate>
+        <div id="form-error-summary" class="form-status" role="alert" aria-live="polite"></div>
+
         <h2>1. Thông tin cá nhân</h2>
-        <form action="Thông tin.html">
         <fieldset>
             <legend>Thông tin cá nhân</legend>
             <section>
-                <label id="tên" for="tên">Tên của bạn:</label>
-                <input type="text" required placeholder="Lê Thái Dũng" id="tên" name="tên">
+                <label for="ten">Tên của bạn:</label>
+                <input type="text" required placeholder="Lê Thái Dũng" id="ten" name="ten">
+                <span class="error-message" id="ten-error">Vui lòng nhập tên của bạn.</span>
             </section>
             <section>
-                <label id="tuổi" for="tuổi">Tuổi của bạn:</label>
-                <input type="number" min="10" max="100" id="tuổi" name="tuổi" required placeholder="25">
+                <label for="tuoi">Tuổi của bạn:</label>
+                <input type="number" min="10" max="100" id="tuoi" name="tuoi" required placeholder="25">
+                <span class="error-message" id="tuoi-error">Vui lòng nhập tuổi (từ 10 đến 100).</span>
             </section>
             <section>
-                <label id="giới-tính" for="giới-tính">Giới tính của bạn:</label>
-                <select id="giới-tính">
-                    <option id="giới-tính">Nam</option>
-                    <option id="giới-tính">Nữ</option>
-                    <option id="giới-tính">Khác</option>
+                <label for="gioi-tinh">Giới tính của bạn:</label>
+                <select id="gioi-tinh" name="gioi-tinh" required>
+                    <option value="" disabled selected>-- Chọn giới tính --</option>
+                    <option value="nam">Nam</option>
+                    <option value="nu">Nữ</option>
+                    <option value="khac">Khác</option>
                 </select>
+                <span class="error-message" id="gioi-tinh-error">Vui lòng chọn giới tính.</span>
             </section>
         </fieldset>
+
         <h2>2. Các mục chính</h2>
         <fieldset>
             <legend>Các mục cần đánh giá</legend>
             <section>
-                <label id="đặt-phòng" for="đặt-phòng">Trải nghiệm đặt phòng của bạn như nào?</label>
-                <select id="đồ-ăn">
-                    <option id="đặt-phòng">Rất tốt</option>
-                    <option id="đặt-phòng" selected>Tốt</option>
-                    <option id="đặt-phòng">Bình thường</option>
-                    <option id="đặt-phòng">Kém</option>
-                    <option id="đặt-phòng">Rất kém</option>
+                <label for="dat-phong">Trải nghiệm đặt phòng của bạn như nào?</label>
+                <select id="dat-phong" name="dat-phong" required>
+                    <option value="" disabled selected>-- Chọn đánh giá --</option>
+                    <option value="rat-tot">Rất tốt</option>
+                    <option value="tot">Tốt</option>
+                    <option value="binh-thuong">Bình thường</option>
+                    <option value="kem">Kém</option>
+                    <option value="rat-kem">Rất kém</option>
                 </select>
+                <span class="error-message" id="dat-phong-error">Vui lòng chọn đánh giá đặt phòng.</span>
             </section>
             <fieldset>
                 <legend>Nếu bạn thấy khó khăn trong việc đặt phòng, hãy mô tả nó vào ô trống bên dưới:</legend>
-            <section>
-                <label id="khó-đặt-phòng">Trải nghiệm của bạn:</label>
-                <input type="text" id="khó-đặt-phòng" name="Trải nghiệm đặt phòng">  
-            </section>
+                <section>
+                    <label for="kho-dat-phong">Trải nghiệm của bạn:</label>
+                    <input type="text" id="kho-dat-phong" name="kho-dat-phong">
+                </section>
             </fieldset>
             <section>
-                <label id="thức-ăn" for="thức-ăn">Trải nghiệm ăn uống của bạn như nào?</label>
-                <select id="thức-ăn">
-                    <option id="thức-ăn">Rất Tốt</option>
-                    <option id="thức-ăn" selected>Tốt</option>
-                    <option id="thức-ăn">Bình thường</option>
-                    <option id="thức-ăn">Kém</option>
-                    <option id="thức-ăn">Rất kém</option>
+                <label for="thuc-an">Trải nghiệm ăn uống của bạn như nào?</label>
+                <select id="thuc-an" name="thuc-an" required>
+                    <option value="" disabled selected>-- Chọn đánh giá --</option>
+                    <option value="rat-tot">Rất Tốt</option>
+                    <option value="tot">Tốt</option>
+                    <option value="binh-thuong">Bình thường</option>
+                    <option value="kem">Kém</option>
+                    <option value="rat-kem">Rất kém</option>
                 </select>
+                <span class="error-message" id="thuc-an-error">Vui lòng chọn đánh giá ăn uống.</span>
             </section>
             <fieldset>
                 <legend>Nếu bạn thấy khó khăn trong ăn uống, hãy mô tả nó vào ô trống bên dưới:</legend>
-            <section>
-                <label id="khó-ăn-uống">Trải nghiệm của bạn:</label>
-                <input type="text" id="khó-ăn-uống" name="Trải nghiệm ăn uống">  
-            </section>
+                <section>
+                    <label for="kho-an-uong">Trải nghiệm của bạn:</label>
+                    <input type="text" id="kho-an-uong" name="kho-an-uong">
+                </section>
             </fieldset>
         </fieldset>
-<br>
-<hr>
-        <table id="tiện-nghi">
+
+        <br>
+        <hr>
+
+        <h2>3. Tiện nghi khách sạn</h2>
+        <table id="tien-nghi-table">
+            <caption>Tiện nghi khách sạn</caption>
             <thead>
-                <caption>Tiện nghi khách sạn</caption>
-            </thead>
-            <tbody>
                 <tr>
                     <td></td>
                     <td>Rất tốt</td>
@@ -91,57 +123,180 @@
                     <td>Kém</td>
                     <td>Rất kém</td>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <th>Phòng ngủ</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>         
+                    <td><input type="radio" name="chat-luong-phong-ngu" value="rat-tot"></td>
+                    <td><input type="radio" name="chat-luong-phong-ngu" value="tot"></td>
+                    <td><input type="radio" name="chat-luong-phong-ngu" value="binh-thuong"></td>
+                    <td><input type="radio" name="chat-luong-phong-ngu" value="kem"></td>
+                    <td><input type="radio" name="chat-luong-phong-ngu" value="rat-kem"></td>
                 </tr>
                 <tr>
                     <th>Phòng khách</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td> 
+                    <td><input type="radio" name="chat-luong-phong-khach" value="rat-tot"></td>
+                    <td><input type="radio" name="chat-luong-phong-khach" value="tot"></td>
+                    <td><input type="radio" name="chat-luong-phong-khach" value="binh-thuong"></td>
+                    <td><input type="radio" name="chat-luong-phong-khach" value="kem"></td>
+                    <td><input type="radio" name="chat-luong-phong-khach" value="rat-kem"></td>
                 </tr>
                 <tr>
                     <th>Hồ bơi</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td> 
+                    <td><input type="radio" name="chat-luong-ho-boi" value="rat-tot"></td>
+                    <td><input type="radio" name="chat-luong-ho-boi" value="tot"></td>
+                    <td><input type="radio" name="chat-luong-ho-boi" value="binh-thuong"></td>
+                    <td><input type="radio" name="chat-luong-ho-boi" value="kem"></td>
+                    <td><input type="radio" name="chat-luong-ho-boi" value="rat-kem"></td>
                 </tr>
-                <tr> 
+                <tr>
                     <th>Suối nước nóng</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td> 
+                    <td><input type="radio" name="chat-luong-suoi-nuoc-nong" value="rat-tot"></td>
+                    <td><input type="radio" name="chat-luong-suoi-nuoc-nong" value="tot"></td>
+                    <td><input type="radio" name="chat-luong-suoi-nuoc-nong" value="binh-thuong"></td>
+                    <td><input type="radio" name="chat-luong-suoi-nuoc-nong" value="kem"></td>
+                    <td><input type="radio" name="chat-luong-suoi-nuoc-nong" value="rat-kem"></td>
                 </tr>
-                <tr> 
+                <tr>
                     <th>Phòng gym</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td> 
+                    <td><input type="radio" name="chat-luong-phong-gym" value="rat-tot"></td>
+                    <td><input type="radio" name="chat-luong-phong-gym" value="tot"></td>
+                    <td><input type="radio" name="chat-luong-phong-gym" value="binh-thuong"></td>
+                    <td><input type="radio" name="chat-luong-phong-gym" value="kem"></td>
+                    <td><input type="radio" name="chat-luong-phong-gym" value="rat-kem"></td>
                 </tr>
-                <tr> 
+                <tr>
                     <th>Thiên nhiên</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td> 
+                    <td><input type="radio" name="chat-luong-thien-nhien" value="rat-tot"></td>
+                    <td><input type="radio" name="chat-luong-thien-nhien" value="tot"></td>
+                    <td><input type="radio" name="chat-luong-thien-nhien" value="binh-thuong"></td>
+                    <td><input type="radio" name="chat-luong-thien-nhien" value="kem"></td>
+                    <td><input type="radio" name="chat-luong-thien-nhien" value="rat-kem"></td>
                 </tr>
             </tbody>
         </table>
-        <
-<hr>
+        <span class="error-message" id="tien-nghi-error">Vui lòng đánh giá tất cả tiện nghi khách sạn.</span>
+
+        <hr>
+        <button type="submit">Gửi khảo sát</button>
+    </form>
+
+    <script>
+    (function () {
+        var form = document.getElementById('survey-form');
+        var errorSummary = document.getElementById('form-error-summary');
+
+        var amenityGroups = [
+            'chat-luong-phong-ngu',
+            'chat-luong-phong-khach',
+            'chat-luong-ho-boi',
+            'chat-luong-suoi-nuoc-nong',
+            'chat-luong-phong-gym',
+            'chat-luong-thien-nhien'
+        ];
+
+        function clearFieldError(fieldId) {
+            var section = document.getElementById(fieldId);
+            if (section) {
+                var parent = section.closest('section') || section.parentElement;
+                if (parent) parent.classList.remove('field-error');
+            }
+        }
+
+        function setFieldError(fieldId, errorId) {
+            var field = document.getElementById(fieldId);
+            if (field) {
+                var parent = field.closest('section') || field.parentElement;
+                if (parent) parent.classList.add('field-error');
+            }
+            var errEl = document.getElementById(errorId);
+            if (errEl) errEl.style.display = 'block';
+        }
+
+        function clearAllErrors() {
+            var msgs = form.querySelectorAll('.error-message');
+            for (var i = 0; i < msgs.length; i++) {
+                msgs[i].style.display = 'none';
+            }
+            var errFields = form.querySelectorAll('.field-error');
+            for (var i = 0; i < errFields.length; i++) {
+                errFields[i].classList.remove('field-error');
+            }
+            errorSummary.textContent = '';
+            errorSummary.className = 'form-status';
+        }
+
+        function validateForm() {
+            clearAllErrors();
+            var errors = [];
+
+            var ten = document.getElementById('ten');
+            if (!ten.value.trim()) {
+                setFieldError('ten', 'ten-error');
+                errors.push('Tên của bạn');
+            }
+
+            var tuoi = document.getElementById('tuoi');
+            var tuoiVal = parseInt(tuoi.value, 10);
+            if (!tuoi.value.trim() || isNaN(tuoiVal) || tuoiVal < 10 || tuoiVal > 100) {
+                setFieldError('tuoi', 'tuoi-error');
+                errors.push('Tuổi của bạn');
+            }
+
+            var gioiTinh = document.getElementById('gioi-tinh');
+            if (!gioiTinh.value) {
+                setFieldError('gioi-tinh', 'gioi-tinh-error');
+                errors.push('Giới tính');
+            }
+
+            var datPhong = document.getElementById('dat-phong');
+            if (!datPhong.value) {
+                setFieldError('dat-phong', 'dat-phong-error');
+                errors.push('Đánh giá đặt phòng');
+            }
+
+            var thucAn = document.getElementById('thuc-an');
+            if (!thucAn.value) {
+                setFieldError('thuc-an', 'thuc-an-error');
+                errors.push('Đánh giá ăn uống');
+            }
+
+            var missingAmenities = [];
+            for (var i = 0; i < amenityGroups.length; i++) {
+                var checked = form.querySelector('input[name="' + amenityGroups[i] + '"]:checked');
+                if (!checked) {
+                    missingAmenities.push(amenityGroups[i]);
+                }
+            }
+            if (missingAmenities.length > 0) {
+                var errEl = document.getElementById('tien-nghi-error');
+                if (errEl) errEl.style.display = 'block';
+                errors.push('Tiện nghi khách sạn (' + missingAmenities.length + ' mục chưa đánh giá)');
+            }
+
+            if (errors.length > 0) {
+                errorSummary.textContent = 'Vui lòng sửa ' + errors.length + ' lỗi: ' + errors.join(', ') + '.';
+                errorSummary.className = 'form-status error';
+                errorSummary.scrollIntoView({ behavior: 'smooth' });
+                return false;
+            }
+
+            return true;
+        }
+
+        form.addEventListener('submit', function (e) {
+            if (!validateForm()) {
+                e.preventDefault();
+            }
+        });
+
+        var inputs = form.querySelectorAll('input, select');
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener('change', function () {
+                clearFieldError(this.id);
+            });
+        }
+    })();
+    </script>
     </body>
 </html>
