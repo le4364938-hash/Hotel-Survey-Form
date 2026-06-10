@@ -5,82 +5,86 @@
         <title>Phiếu khảo sát từ Khách Sạn của chúng tôi.</title>
     </head>
     <body>
-    <section>
         <h1>Phiếu khảo sát từ Khách Sạn.</h1>
         <p>Cảm ơn các bạn vì đã sử dụng dịch vụ trong khách sạn của chúng tôi. Chúng tôi luôn chào đón các bạn trở lại!</p>
-    <form action="Thông tin.html">
-        <fieldset>
-            <legend>Các mục</legend>
-            <nav aria-hidden="true">
-            <!--Các links dẫn đến các mục đánh giá ở đây-->
-            </nav>
-        </fieldset>
-    </form>
-    </section>
+        <nav>
+            <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            </ul>
+        </nav>
+    <section>
         <h2>1. Thông tin cá nhân</h2>
-        <form action="Thông tin.html">
+    <form action="Information">
         <fieldset>
             <legend>Thông tin cá nhân</legend>
-            <section>
+            <div>
                 <label for="tên">Tên của bạn:</label>
                 <input type="text" required placeholder="Lê Thái Dũng" id="tên" name="tên">
-            </section>
-            <section>
+            </div>
+            <div>
                 <label for="tuổi">Tuổi của bạn:</label>
                 <input type="number" min="10" max="100" id="tuổi" name="tuổi" required placeholder="25">
-            </section>
-            <section>
+            </div>
+            <div>
                 <label for="giới-tính">Giới tính của bạn:</label>
-                <select id="giới-tính">
+                <select id="giới-tính" name="giới-tính">
                     <option>Nam</option>
                     <option>Nữ</option>
                     <option>Khác</option>
                 </select>
-            </section>
+            </div>
         </fieldset>
+    </form>
+    </section>
+    <section>
         <h2>2. Các mục chính</h2>
+    <form action="Feedback">
         <fieldset>
             <legend>Các mục cần đánh giá</legend>
-            <section>
-                <label for="đặt-phòng" for="đặt-phòng">Trải nghiệm đặt phòng của bạn như nào?</label>
-                <select id="đồ-ăn">
-                    <option id="đặt-phòng">Rất tốt</option>
-                    <option id="đặt-phòng" selected>Tốt</option>
-                    <option id="đặt-phòng">Bình thường</option>
-                    <option id="đặt-phòng">Kém</option>
-                    <option id="đặt-phòng">Rất kém</option>
+            <div>
+                <label for="trải-nghiệm-đặt-phòng">Trải nghiệm đặt phòng của bạn như nào?</label>
+                <select id="trải-nghiệm-đặt-phòng" name="trải-nghiệm-đặt-phòng">
+                    <option >Rất tốt</option>
+                    <option >selected>Tốt</option>
+                    <option >Bình thường</option>
+                    <option >Kém</option>
+                    <option >Rất kém</option>
                 </select>
-            </section>
+            </div>
             <fieldset>
                 <legend>Nếu bạn thấy khó khăn trong việc đặt phòng, hãy mô tả nó vào ô trống bên dưới:</legend>
-            <section>
+            <div>
                 <label for="khó-đặt-phòng">Trải nghiệm của bạn:</label>
                 <input type="text" id="khó-đặt-phòng" name="Trải nghiệm đặt phòng">  
-            </section>
+            </div>
             </fieldset>
-            <section>
-                <label for="thức-ăn" for="thức-ăn">Trải nghiệm ăn uống của bạn như nào?</label>
-                <select id="thức-ăn">
-                    <option id="thức-ăn">Rất Tốt</option>
-                    <option id="thức-ăn" selected>Tốt</option>
-                    <option id="thức-ăn">Bình thường</option>
-                    <option id="thức-ăn">Kém</option>
-                    <option id="thức-ăn">Rất kém</option>
+            <div>
+                <label for="trải-nghiệm-ăn-uống">Trải nghiệm ăn uống của bạn như nào?</label>
+                <select id="trải-nghiệm-ăn-uống" name="trải-nghiệm-ăn-uống">
+                    <option>Rất Tốt</option>
+                    <option  selected>Tốt</option>
+                    <option >Bình thường</option>
+                    <option>Kém</option>
+                    <option >Rất kém</option>
                 </select>
-            </section>
+            </div>
             <fieldset>
                 <legend>Nếu bạn thấy khó khăn trong ăn uống, hãy mô tả nó vào ô trống bên dưới:</legend>
-            <section>
-                <label id="khó-ăn-uống">Trải nghiệm của bạn:</label>
+            <div>
+                <label for="khó-ăn-uống">Trải nghiệm của bạn:</label>
                 <input type="text" id="khó-ăn-uống" name="Trải nghiệm ăn uống">  
-            </section>
+            </div>
             </fieldset>
         </fieldset>
-<br>
-<hr>
+    </form>
+    </section>
+    <section>
         <table id="tiện-nghi">
+            <caption>Tiện nghi khách sạn</caption>
             <thead>
-                <caption>Tiện nghi khách sạn</caption>
+               
             </thead>
             <tbody>
                 <tr>
@@ -92,56 +96,55 @@
                     <td>Rất kém</td>
                 </tr>
                 <tr>
-                    <th>Phòng ngủ</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng ngủ"></td>         
+                    <th id="chất-lượng-phòng-ngủ">Phòng ngủ</th>
+                    <td><input type="radio" value="Rất tốt" name="chất lượng phòng ngủ"></td>
+                    <td><input type="radio" value="Tốt"     name="chất lượng phòng ngủ"></td>
+                    <td><input type="radio" value="Bình thường" name="chất lượng phòng ngủ"></td>
+                    <td><input type="radio" value="Kém"      name="chất lượng phòng ngủ"></td>
+                    <td><input type="radio" value="Rất Kém" name="chất lượng phòng ngủ"></td>         
                 </tr>
                 <tr>
-                    <th>Phòng khách</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng khách"></td> 
+                    <th id="chất-lượng-phòng-khách">Phòng khách</th>
+                    <td><input type="radio" value="Rất tốt" name="chất lượng phòng khách"></td>
+                    <td><input type="radio" value="Tốt" name="chất lượng phòng khách"></td>
+                    <td><input type="radio" value="Bình thường" name="chất lượng phòng khách"></td>
+                    <td><input type="radio" value="Kém" name="chất lượng phòng khách"></td>
+                    <td><input type="radio" value="Rất Kém" name="chất lượng phòng khách"></td> 
                 </tr>
                 <tr>
-                    <th>Hồ bơi</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng hồ bơi"></td> 
+                    <th id="chất-lượng-hồ-bơi">Hồ bơi</th>
+                    <td><input type="radio" value="Rất tốt" name="chất lượng hồ bơi"></td>
+                    <td><input type="radio" value="Tốt" name="chất lượng hồ bơi"></td>
+                    <td><input type="radio" value="Bình thường" name="chất lượng hồ bơi"></td>
+                    <td><input type="radio" value="Kém" name="chất lượng hồ bơi"></td>
+                    <td><input type="radio" value="Rất Kém" name="chất lượng hồ bơi"></td> 
                 </tr>
                 <tr> 
-                    <th>Suối nước nóng</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng suối nước nóng"></td> 
+                    <th id="chất-lượng-suối-nước-nóng">Suối nước nóng</th>
+                    <td><input type="radio" value="Rất tốt" name="chất lượng suối nước nóng"></td>
+                    <td><input type="radio" value="Tốt" name="chất lượng suối nước nóng"></td>
+                    <td><input type="radio" value="Bình thường" name="chất lượng suối nước nóng"></td>
+                    <td><input type="radio" value="Kém" name="chất lượng suối nước nóng"></td>
+                    <td><input type="radio" value="Rất Kém" name="chất lượng suối nước nóng"></td> 
                 </tr>
                 <tr> 
-                    <th>Phòng gym</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td> 
+                    <th id="chất-lượng-phòng-gym">Phòng gym</th>
+                    <td><input type="radio" value="Rất tốt" name="chất lượng phòng gym"></td>
+                    <td><input type="radio" value="Tốt" name="chất lượng phòng gym"></td>
+                    <td><input type="radio" value="Bình thường" name="chất lượng phòng gym"></td>
+                    <td><input type="radio" value="Kém" name="chất lượng phòng gym"></td>
+                    <td><input type="radio" value="Rất Kém" name="chất lượng phòng gym"></td> 
                 </tr>
                 <tr> 
-                    <!-- Dùng được nhiều id nhưng giá trị của mỗi id phải khác nhau-->
-                    <th>Thiên nhiên</th>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
-                    <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td> 
+                    <th id="chất-lượng-thiên-nhiên">Thiên nhiên</th>
+                    <td><input type="radio" value="Rất tốt" name="chất lượng thiên nhiên"></td>
+                    <td><input type="radio" value="Tốt" name="chất lượng thiên nhiên"></td>
+                    <td><input type="radio" value="Bình thường" name="chất lượng thiên nhiên"></td>
+                    <td><input type="radio" value="Kém" name="chất lượng thiên nhiên"></td>
+                    <td><input type="radio" value="Rất Kém" name="chất lượng thiên nhiên"></td> 
                 </tr>
             </tbody>
         </table>
-<hr>
+    </section>
     </body>
 </html>
