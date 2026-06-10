@@ -22,19 +22,19 @@
         <fieldset>
             <legend>Thông tin cá nhân</legend>
             <section>
-                <label id="tên" for="tên">Tên của bạn:</label>
+                <label for="tên">Tên của bạn:</label>
                 <input type="text" required placeholder="Lê Thái Dũng" id="tên" name="tên">
             </section>
             <section>
-                <label id="tuổi" for="tuổi">Tuổi của bạn:</label>
+                <label for="tuổi">Tuổi của bạn:</label>
                 <input type="number" min="10" max="100" id="tuổi" name="tuổi" required placeholder="25">
             </section>
             <section>
-                <label id="giới-tính" for="giới-tính">Giới tính của bạn:</label>
+                <label for="giới-tính">Giới tính của bạn:</label>
                 <select id="giới-tính">
-                    <option id="giới-tính">Nam</option>
-                    <option id="giới-tính">Nữ</option>
-                    <option id="giới-tính">Khác</option>
+                    <option>Nam</option>
+                    <option>Nữ</option>
+                    <option>Khác</option>
                 </select>
             </section>
         </fieldset>
@@ -42,7 +42,7 @@
         <fieldset>
             <legend>Các mục cần đánh giá</legend>
             <section>
-                <label id="đặt-phòng" for="đặt-phòng">Trải nghiệm đặt phòng của bạn như nào?</label>
+                <label for="đặt-phòng" for="đặt-phòng">Trải nghiệm đặt phòng của bạn như nào?</label>
                 <select id="đồ-ăn">
                     <option id="đặt-phòng">Rất tốt</option>
                     <option id="đặt-phòng" selected>Tốt</option>
@@ -54,12 +54,12 @@
             <fieldset>
                 <legend>Nếu bạn thấy khó khăn trong việc đặt phòng, hãy mô tả nó vào ô trống bên dưới:</legend>
             <section>
-                <label id="khó-đặt-phòng">Trải nghiệm của bạn:</label>
+                <label for="khó-đặt-phòng">Trải nghiệm của bạn:</label>
                 <input type="text" id="khó-đặt-phòng" name="Trải nghiệm đặt phòng">  
             </section>
             </fieldset>
             <section>
-                <label id="thức-ăn" for="thức-ăn">Trải nghiệm ăn uống của bạn như nào?</label>
+                <label for="thức-ăn" for="thức-ăn">Trải nghiệm ăn uống của bạn như nào?</label>
                 <select id="thức-ăn">
                     <option id="thức-ăn">Rất Tốt</option>
                     <option id="thức-ăn" selected>Tốt</option>
@@ -132,6 +132,7 @@
                     <td><input type="radio" id="tiện-nghi" name="chất lượng phòng gym"></td> 
                 </tr>
                 <tr> 
+                    <!-- Dùng được nhiều id nhưng giá trị của mỗi id phải khác nhau-->
                     <th>Thiên nhiên</th>
                     <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
                     <td><input type="radio" id="tiện-nghi" name="chất lượng thiên nhiên"></td>
@@ -141,7 +142,6 @@
                 </tr>
             </tbody>
         </table>
-        <
 <hr>
     </body>
 </html>
